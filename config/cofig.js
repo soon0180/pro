@@ -5,7 +5,7 @@ const config = {
   dev: {
     username: "admin",
     password: process.env.DB_PASSWORD,
-    database: "keboard_warrior",
+    database: "mydb",
     host: "localhost",
     dialect: "mysql",
   },
