@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#mainPageTop {
+    background-color: black;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    color: white;
+    position: relative;
+    justify-content: space-between;
+}
+
+#mainPageTop > div {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainPageTop > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#mainPageTop > ul > li {
+    list-style: none;
+}
+#mainPageNav {
+    width: 30%;
+    display: flex;
+}
+#mainPageSign {
+    width: 10%;
+}
+#mainPageSign > li > a,
+#mainPageNav > li > a,
+#mainLogo > a {
+    text-decoration: none;
+    color: white;
+}
+#mainPageLogo {
+    width: 5%;
+}
+.mainPageLogo_notionLogo,
+.mainPageLogo_githubLogo {
+    width: 30px;
+}
+/* 여기까지 공통 탑 부분 */
+#contents {
+    position: relative;
+}
+/* 메인슬라이드 */
+#mainContent {
+    width: 1000px;
+    height: 700px;
+    background-color: black;
+    margin: auto;
+    /* display: flex; */
+    border: 1px solid;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 50px;
+    position: relative;
+}
+/* #mainContent::-webkit-scrollbar {
+    display: none;
+} */
+#mainContentWrap {
+    width: max-content;
+    height: 500px;
+    display: flex;
+    /* position: absolute; */
+}
+#mainContentWrap .mainPost {
+    width: 455px;
+    height: 450px;
+    background-color: white;
+    margin: 30px 0px 0px 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+#mainContentWrap .mainPost:last-child {
+    width: 455px;
+    height: 450px;
+    background-color: white;
+    margin: 30px 30px 0px 30px;
+}
+#mainContentWrap .mainPost > video {
+    width: max-content;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+#mainTitleWrap {
+    /* background-color: whitesmoke; */
+    width: 3000px;
+    height: 200px;
+    display: flex;
+}
+#mainTitleWrap .mainTitle {
+    width: 455px;
+    background-color: black;
+    margin: 15px 0px 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#mainTitleWrap .mainTitle > a {
+    text-decoration: none;
+    color: rgb(120, 116, 116);
+    font-weight: bold;
+    font-size: 35px;
+    cursor: pointer;
+}
+#mainTitleWrap .mainTitle > a:hover {
+    color: #fff;
+    transition: 0.5s;
+    font-size: 55px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff,
+        0 0 120px #fff, 0 0 240px #fff;
+}
+
+/* 여기서부터 스크롤헬퍼 */
+.scrollHelper {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 80%;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid black;
+    border-radius: 50px;
+}
+.scrollHelper_contents {
+    position: absolute;
+    width: max-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+}
+.scrollHelper_icon {
+    font-size: 100px;
+    font-weight: 600;
+    transform: translateX(-10px);
+    animation: move 0.9s;
+    animation-iteration-count: infinite;
+}
+.scrollHelper_text {
+    font-size: 30px;
+}
+.scrollHelper.active {
+    /* opacity: 1; */
+    animation: timer 3s;
+}
+.scrollHelper_icon.active {
+    font-size: 100px;
+    font-weight: bolder;
+    opacity: 1;
+}
+.scrollHelper_text.active {
+}
+@keyframes timer {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes move {
+    50% {
+        transform: translateX(90px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+.scrollHelper_arrow {
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 20px;
+    position: absolute;
+    bottom: -40px;
+    left: 45px;
+}
+.arrow {
+    border-top-color: white;
+}
+.arrow-border {
+    border-top-color: black;
+    bottom: -50px;
+}
